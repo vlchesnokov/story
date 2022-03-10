@@ -24,7 +24,7 @@ public class ProductInfoService {
      * @return цены товаров
      */
     // Вызывается внешний микросервис для предоставления информации по ценам продуктов, заданных идентификаторами
-    ProductPrice getProductPrices(List<Integer> ids) {
+    public ProductPrice getProductPrices(List<Integer> ids) {
         if (ids == null || ids.isEmpty()) {
             throw new IllegalArgumentException("Не заданы идентификаторы товаров");
         }

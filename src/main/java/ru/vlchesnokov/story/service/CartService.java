@@ -12,7 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 /**
- * Сервис по работе c корзиной товаров
+ * Сервис по работе c корзиной товаров.
  *
  * @author Chesnokov-vl
  */
@@ -31,7 +31,7 @@ public class CartService {
      * @return расчитанная корзина товаров
      */
     public CalculatedCart getCalculatedCart(Cart cart) {
-        List<Integer> idsWithoutPrice = cart.getPositions().stream().map(Position::getProductId).filter(cache::containsKey).collect(Collectors.toList());
+        List<Integer> idsWithoutPrice = cart.getPositions().stream().map(Position::getProductId).filter(id -> !cache.containsKey(id)).collect(Collectors.toList());
 
         if (!idsWithoutPrice.isEmpty()) {
             fillCache(idsWithoutPrice);
