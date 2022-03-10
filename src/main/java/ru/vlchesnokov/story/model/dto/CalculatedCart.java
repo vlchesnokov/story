@@ -18,7 +18,7 @@ public class CalculatedCart implements Serializable {
     private float totalAmount;
 
     /**
-     * Создает расчитанную корзину товаров.
+     * Создает расчитанную корзину товаров с параметрами.
      *
      * @param amountPositions список позиций с суммой цены товара
      * @param totalAmount     общая сумма
@@ -26,6 +26,12 @@ public class CalculatedCart implements Serializable {
     public CalculatedCart(List<AmountPosition> amountPositions, float totalAmount) {
         this.amountPositions = amountPositions;
         this.totalAmount = totalAmount;
+    }
+
+    /**
+     * Создает росчитанную корзину без параметров.
+     */
+    public CalculatedCart() {
     }
 
     /**

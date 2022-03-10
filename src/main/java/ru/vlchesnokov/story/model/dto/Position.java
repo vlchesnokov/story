@@ -16,6 +16,23 @@ public class Position implements Serializable {
     private int count;
 
     /**
+     * Создает позицию с товаром.
+     *
+     * @param productId идентификатор товара
+     * @param count     количество товара
+     */
+    public Position(int productId, int count) {
+        this.productId = productId;
+        this.count = count;
+    }
+
+    /**
+     * Создает позицию без параметров.
+     */
+    public Position() {
+    }
+
+    /**
      * Возвращает идентификатор товара.
      *
      * @return идентификатор товара
